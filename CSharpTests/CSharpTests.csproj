@@ -42,6 +42,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="coverage\script-report.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="coverage\coverage.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="coverage\script-coverage.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="coverage\script-tests.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +65,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -61,4 +74,15 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="Hello">
+    <Message Text="Hi">
+    </Message>
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>move "$(TargetDir)coverage\"*.bat  "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del /F /Q "$(TargetDir)coverage"
+del "$(TargetDir)results.xml"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
