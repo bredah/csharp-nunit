@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dataset xmlns="http://tempuri.org/Dataset.xsd">
+  <USER>
+    <ID>1</ID>
+    <LOGIN>henbreda</LOGIN>
+    <NAME>Henrique Breda</NAME>
+    <EMAIL>henrique.breda@email.com</EMAIL>
+  </USER>
+</Dataset>

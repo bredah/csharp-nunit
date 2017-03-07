@@ -1,11 +1,8 @@
-﻿using NUnit.Framework;
+﻿using CSharp.Unit;
+using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CSharp.Tests
+namespace CSharp.NUnit.Tests
 {
     [TestFixture]
     public class CalculatorTest
@@ -25,9 +22,6 @@ namespace CSharp.Tests
         [TearDown]
         protected void tearDown()
         {
-            calculator.valueA = valueA;
-            calculator.valueB = valueB;
-            Assert.AreEqual(valueA + valueB, calculator.getResult(Calculator.Operations.Add));
         }
 
         [Test]
